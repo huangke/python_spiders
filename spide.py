@@ -60,8 +60,8 @@ def crawl_page(page_url, page_num, folder_name):
     #myResponse = urllib2.urlopen(req)
     #page_html = pq(url = page_url,headers = headers)
     comment_id_patt = r'<li id="comment-(.+?)">'
-    #comment_ids = re.findall(comment_id_patt, myPage)
     comment_ids = re.findall(comment_id_patt, page_html.html())
+    #comment_ids = re.findall(comment_id_patt, myPage)
     name_urls = {}
     for comment_id in comment_ids:
         name_url = dispose_comment(page_html,comment_id)
